@@ -2,7 +2,8 @@
 
 <p align="center">Aplicação web com a finalidade de lançar e controlar finanças</p>
 
-![Gravando-2023-09-30-103537](https://github.com/llarissaribeiro/minhas-financas/assets/118293780/995264d5-2af5-4e68-8b9e-3a3f49cd11c7)
+![Gravando-2023-09-30-103537](https://github.com/llarissaribeiro/minhas-financas/assets/118293780/826af37b-58af-42c6-a358-1ea182e88fcf)
+
 
 <h1>🧮 Descrição</h1>
 <br> - Criar e lançar gastos e créditos.
