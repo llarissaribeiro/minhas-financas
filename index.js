@@ -57,7 +57,7 @@ function createDeleteTransactionBtn(id){
   deleteBtn.classList.add('delete-btn')
   deleteBtn.textContent = 'Excluir'
   deleteBtn.addEventListener('click', async() => {
-    await fetch(`http://localhost:3000/transactions/${id}`, {
+    await fetch(`https://llarissaribeiro.github.io/minhas-financas/transactions/${id}`, {
       method: 'DELETE'
     })
     deleteBtn.parentElement.remove()
@@ -92,13 +92,16 @@ async function saveTransaction(){
 
   if(id){
     //editar transação
-    const response = await fetch(`http://localhost:3000/transactions/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify({name, amount}),
-      headers: {
-        'Content-Type': 'application/json'
+    const response = await fetch(
+      `https://llarissaribeiro.github.io/minhas-financas/${id}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({ name, amount }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
-    })
+    );
     const transaction = await response.json()
     //excluir a transação antiga
     const indexToRemove = transactions.findIndex((t) => t.id === id)
@@ -108,13 +111,16 @@ async function saveTransaction(){
 
   } else{
     //criar nova transação
-    const response = await fetch("http://localhost:3000/transactions", {
-      method: 'POST',
-      body: JSON.stringify({name, amount}),
-      headers: {
-        'Content-Type': 'application/json'
+    const response = await fetch(
+      "https://llarissaribeiro.github.io/minhas-financas/",
+      {
+        method: "POST",
+        body: JSON.stringify({ name, amount }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
-    })
+    );
   
     const transaction = await response.json()
     transactions.push(transaction)
@@ -127,7 +133,9 @@ async function saveTransaction(){
 }
 
 async function fetchTransactions(){
-  return await fetch("http://localhost:3000/transactions").then(res => res.json())
+  return await fetch("https://llarissaribeiro.github.io/minhas-financas/").then(
+    (res) => res.json()
+  );
 }
 
 function updateBalance(){
